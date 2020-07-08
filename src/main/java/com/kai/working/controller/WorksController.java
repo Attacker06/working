@@ -39,6 +39,6 @@ public class WorksController {
 
     @GetMapping("works/checkWork")
     private BaseResponse checkWork(@RequestParam Integer id){
-
+        return worksService.selectWork(id);
     }
 }
