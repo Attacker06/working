@@ -14,4 +14,6 @@ public interface IWorksService {
     BaseResponse selectWork(Integer id);
 
     BaseResponse findAll();
+
+    BaseResponse checkWork(Integer id);
 }

@@ -91,4 +91,21 @@ public class WorksService implements IWorksService {
         }
         return baseResponse;
     }
+
+    @Override
+    public BaseResponse checkWork(Integer id){
+        BaseResponse baseResponse = new BaseResponse();
+        try{
+            Works works = workRepository.getOne(id);
+            works.setPass(true);
+            baseResponse.setStatus("200");
+            baseResponse.setMessage("成功審核一筆加班");
+            baseResponse.setResult(works);
+        }catch (Exception e){
+            baseResponse.setStatus("500");
+            baseResponse.setMessage("失敗");
+            baseResponse.setResult(e);
+        }
+        return baseResponse;
+    }
 }

@@ -36,4 +36,9 @@ public class WorksController {
     private BaseResponse findAllWork(){
         return worksService.findAll();
     }
+
+    @GetMapping("works/checkWork")
+    private BaseResponse checkWork(@RequestParam Integer id){
+
+    }
 }
